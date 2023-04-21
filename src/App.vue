@@ -11,7 +11,17 @@ export default {
   name: 'App',
   components: {
 
-  }
+  },
+    mounted() {
+        // this.$fireworks()
+        // this.$cobweb()
+        // this.$benevolence()
+        // this.$randomWrite()
+        // this.$petal()
+    },
+    methods: {
+
+    }
 }
 </script>
 
@@ -28,4 +38,5 @@ body {
     margin: 0;
     padding: 0;
 }
+
 </style>

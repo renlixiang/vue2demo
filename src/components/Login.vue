@@ -105,7 +105,7 @@
 
 <script lang="js">
 export default {
-    name: "loginVue",
+    name: "LoginVue",
     mounted() {
 
     },
@@ -204,7 +204,7 @@ export default {
                 birthday: this.message.birthday,
                 email: this.message.email
             }
-            this.$store.commit("add_user", this.data)
+            this.$store.dispatch("addUser", this.data)
             this.$message({
                 type:"success",
                 message: '注册成功，请登录',
@@ -224,6 +224,13 @@ export default {
                         message: '登录成功',
                         duration: 2000
                     })
+                    this.$router.push("/home")
+                }else {
+                    this.$message({
+                        type: 'error',
+                        message: '用户名或密码错误，请重新输入',
+                        duration: 2000
+                    })
                 }
             }
         },
@@ -236,7 +243,7 @@ export default {
                 birthday: this.message.birthday,
                 email: this.message.email
             }
-            this.$store.commit("updatePassword", this.data)
+            this.$store.dispatch("/users/updatePassword", this.data)
             this.$message({
                 type:"success",
                 message: '密码设置成功，请登录',
