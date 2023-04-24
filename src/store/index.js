@@ -14,7 +14,12 @@ export default new Vuex.Store({
             phone: '19919878143',
             birthday: '1999-12-01',
             email: '2656742989@qq.com'
-        }]
+        }],
+        topColor: '#dfe4ed',
+        menuColor: '#fcede4',
+        bgColor: '#dfe4ed',
+        mainColor: '#f0f9eb',
+        mouseStyleFlag: ''
 
     },
     mutations: {

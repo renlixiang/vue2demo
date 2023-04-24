@@ -1,6 +1,6 @@
 <template>
     <div class="container" :class="{'home-bgc':showBgc}">
-        <div class="head">
+        <div class="head" :style="{'background-color': this.$store.state.topColor}">
             <img src="" alt="" class="logo">
 
             <div class="user">
@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="body" >
-            <div class="menu">
+            <div class="menu" :style="{'background-color': this.$store.state.menuColor}">
                 <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
                     <el-button  @click="openMenu">
                         <i class="el-icon-s-unfold"></i>
@@ -18,16 +18,14 @@
                 </el-radio-group>
                 <el-menu :default-active="$store.state.activeTab" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
                     <el-submenu index="1">
-                        <template slot="title">
+                        <template slot="title" >
                             <i class="el-icon-location"></i>
                             <span slot="title">导航一</span>
                         </template>
-                        <el-menu-item-group>
                             <el-menu-item
                                 index="/test1"
                                 @click="$router.push({path: '/test1'})">选项1</el-menu-item>
                             <el-menu-item index="/test2" @click="$router.push('/test2')">选项2</el-menu-item>
-                        </el-menu-item-group>
                     </el-submenu>
                     <el-menu-item index="2">
                         <i class="el-icon-menu"></i>
@@ -72,6 +70,7 @@ export default {
     data() {
         return {
             isCollapse: true,
+            color: '#fcede4'
             // openTabs: this.$store.state.tabsView.openTab,
             // activeTab: this.$store.state.tabsView.activeTab,
         };
@@ -146,10 +145,18 @@ export default {
             display: flex;
 
             .menu {
+                background-color: #fcede4;
 
                 .el-menu-vertical-demo:not(.el-menu--collapse) {
                     width: 200px;
                     min-height: 400px;
+                }
+                /deep/ .el-menu-vertical-demo {
+                    background-color: rgba(255, 255,255, 0);
+
+                }
+                /deep/ .el-menu--inline{
+                    background-color: rgba(255, 255,255, 0);
                 }
             }
 

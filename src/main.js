@@ -4,10 +4,10 @@ import ElementUI from 'element-ui'
 import './theme/index.css'
 import router from './router'
 import store from './store/index'
-import fireworks from '@/js/mouseStype/fireworks'
-import benevolence from "@/js/mouseStype/benevolence";
+import fireworks from '@/js/mouseStyle/fireworks'
+import benevolence from "@/js/mouseStyle/benevolence";
 import cobweb from '@/js/bgImage/cobweb'
-import randomWrite from '@/js/mouseStype/randomWrite'
+import randomWrite from '@/js/mouseStyle/randomWrite'
 import petal from "@/js/bgImage/petal";
 
 Vue.config.productionTip = false
