@@ -10,10 +10,11 @@ import cobweb from '@/js/bgImage/cobweb'
 import randomWrite from '@/js/mouseStyle/randomWrite'
 import petal from "@/js/bgImage/petal";
 
+
 Vue.config.productionTip = false
 
-
 Vue.use(ElementUI)
+
 Vue.prototype.$fireworks = fireworks
 Vue.prototype.$benevolence = benevolence
 Vue.prototype.$randomWrite = randomWrite

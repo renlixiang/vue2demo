@@ -1,13 +1,16 @@
 <template>
     <div class="container" :class="{'home-bgc':showBgc}">
         <div class="head" :style="{'background-color': this.$store.state.topColor}">
-            <img src="" alt="" class="logo">
+<!--            <img src="" alt="" class="logo">-->
 
-            <div class="user">
-                <img src="" alt="" class="image">
-                <div class="user-name"></div>
-                <div class="massage"></div>
-            </div>
+<!--            <div class="user">-->
+<!--                <img src="" alt="" class="image">-->
+<!--                <div class="user-name"></div>-->
+<!--                <div class="massage"></div>-->
+<!--            </div>-->
+                <TopVue></TopVue>
+
+
         </div>
         <div class="body" >
             <div class="menu" :style="{'background-color': this.$store.state.menuColor}">
@@ -23,22 +26,34 @@
                             <span slot="title">导航一</span>
                         </template>
                             <el-menu-item
-                                index="/test1"
-                                @click="$router.push({path: '/test1'})">选项1</el-menu-item>
-                            <el-menu-item index="/test2" @click="$router.push('/test2')">选项2</el-menu-item>
+                                index="/nav1/test1"
+                                @click="$router.push({path: '/nav1/test1'})">选项1</el-menu-item>
+                            <el-menu-item index="/nav1/test2" @click="$router.push('/nav1/test2')">选项2</el-menu-item>
                     </el-submenu>
-                    <el-menu-item index="2">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">导航二</span>
-                    </el-menu-item>
-                    <el-menu-item index="3">
-                        <i class="el-icon-document"></i>
-                        <span slot="title">导航三</span>
-                    </el-menu-item>
-                    <el-menu-item index="4">
-                        <i class="el-icon-setting"></i>
-                        <span slot="title">导航四</span>
-                    </el-menu-item>
+                    <el-submenu index="2">
+                        <template slot="title" >
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </template>
+                        <el-menu-item
+                            index="/nav2/three"
+                            @click="$router.push({path: '/nav2/three'})">3D</el-menu-item>
+                        <el-menu-item index="/test2" @click="$router.push('/test2')">选项2</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="3">
+                        <template slot="title" >
+                            <i class="el-icon-document"></i>
+                            <span slot="title">导航三</span>
+                        </template>
+                        <el-menu-item index="3-1">选项1</el-menu-item>
+                    </el-submenu>
+                    <el-submenu index="4">
+                        <template slot="title" >
+                            <i class="el-icon-setting"></i>
+                            <span slot="title">导航四</span>
+                        </template>
+                        <el-menu-item index="4-1">选项1</el-menu-item>
+                    </el-submenu>
                 </el-menu>
             </div>
            <div class="tabs">
@@ -59,10 +74,12 @@
 
 <script>
 import TabsView from "@/components/TabsView";
+import TopVue from "@/components/Top"
 export default {
     name: "MainVue",
     components: {
-        TabsView: TabsView
+        TabsView: TabsView,
+        TopVue
     },
     mounted() {
 
@@ -137,6 +154,11 @@ export default {
             height: 50px;
             background-color: #dfe4ed;
             align-self: flex-start;
+            //border: #cf9236 solid 2px;
+            //.top {
+            //    width: 100%;
+            //    height: 100%;
+            //}
         }
 
         .body {
@@ -175,11 +197,11 @@ export default {
             }
         }
 
-        .footer {
-            width: 100%;
-            height: 50px;
-            background-color: #f2f2f2;
-            align-self: flex-end;
-        }
+        //.footer {
+        //    width: 100%;
+        //    height: 50px;
+        //    background-color: #f2f2f2;
+        //    align-self: flex-end;
+        //}
     }
 </style>

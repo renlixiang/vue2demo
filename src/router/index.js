@@ -5,6 +5,7 @@ import MainVue from '@/components/Main'
 import testVue from '@/components/test1'
 import test2Vue from '@/components/test2'
 import HomeVue from '@/components/Home'
+import ThreeVue from '@/components/Three'
 
 Vue.use(Router)
 
@@ -29,13 +30,17 @@ export default new Router({
                     component: HomeVue,
                     meta: {affix: true}
                 },{
-                    path: '/test1',
+                    path: '/nav1/test1',
                     name: '测试1',
                     component: testVue,
                 },{
-                    path: '/test2',
+                    path: '/nav1/test2',
                     name: '测试2',
                     component: test2Vue
+                },{
+                    path: '/nav2/three',
+                    name: '3D',
+                    component: ThreeVue
                 }
             ]
         }
